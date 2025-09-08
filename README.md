@@ -1,85 +1,56 @@
-# CPU Scheduling Simulator 🖥️ 
+Here’s an updated **README.md** (quick, polished, and ready for your repo):
 
-A simulator for CPU Scheduling Algorithms implemented in [your chosen language/framework].
-This project demonstrates how different scheduling algorithms work and visualizes their effect on process execution order, waiting time, and turnaround time.
+````markdown
+# CPU Scheduling Simulator (C++)
 
-✨ Features
+A simulator to visualize and compare different **CPU Scheduling Algorithms**.  
+Implements classic scheduling techniques and shows **Gantt charts**, process stats, and performance metrics.
 
-Implementation of all major CPU Scheduling Algorithms:
+---
 
-First Come First Serve (FCFS)
+## 🚀 Features
+- ✅ First-Come, First-Served (FCFS)  
+- ✅ Shortest Job First (SJF)  
+- ✅ Round Robin (RR)  
+- ✅ Priority Scheduling  
+- ✅ Multilevel Feedback Queue (MLFQ)  
+- 📊 Gantt Chart visualization  
+- 📈 Turnaround, Waiting, and Response time calculations  
 
-Shortest Job First (SJF) – Preemptive & Non-Preemptive
+---
 
-Round Robin (RR)
+## 🛠️ Getting Started
 
-Priority Scheduling – Preemptive & Non-Preemptive
-
-Multilevel Queue (if implemented)
-
-[Any other algorithms you add]
-
-Visualization of Gantt Chart to show process execution order
-
-Calculation of:
-
-Average Waiting Time
-
-Average Turnaround Time
-
-CPU Utilization
-
-Throughput
-
-🚀 Getting Started
-Prerequisites
-
-[Language/Framework] (e.g., Python 3.x, Node.js, Java, C++)
-
-[Any required libraries, e.g., matplotlib, tkinter, etc.]
-
-Installation
-# Clone the repository
-git clone https://github.com/your-username/cpu-scheduling-simulator.git
-
-# Navigate into the project directory
+### 1. Clone the repository
+```bash
+git clone https://github.com/gunajchugh05/cpu-scheduling-simulator.git
 cd cpu-scheduling-simulator
+````
 
-# Install dependencies (if any)
-[command]
+## 📷 Example Output
 
-Run the Simulator
-[run command, e.g., python main.py]
+```
+Gantt Chart: | P1 | P2 | P3 | ...
+Process Stats:
+PID | Arrival | Burst | Waiting | Turnaround
+--------------------------------------------
+P1  |   0     |  5    |   3     |    8
+...
+```
+---
 
-📸 Screenshots (Optional)
+## 📚 Learning
+This project is designed for students and developers to **learn & compare CPU scheduling algorithms** with practical examples.
 
-Add screenshots of your simulator UI / Gantt Chart outputs here
+---
 
-📖 Example
+## 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to improve.
 
-Input:
+---
 
-Processes: P1, P2, P3
+__For reference__
 
-Arrival Times: [0, 2, 4]
-
-Burst Times: [5, 3, 1]
-
-Output (FCFS):
-
-Average Waiting Time = 2.33
-
-Average Turnaround Time = 6.33
-
-Gantt Chart: | P1 | P2 | P3 |
-
-🛠️ Tech Stack
-
-[Language]
-
-[Libraries / Frameworks]
-
-🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-Feel free to fork the repo and submit a PR.
+- https://github.com/Amir-Shamsi/cpu-scheduling-algorithm/tree/master
+- https://github.com/PrinceSinghhub/CPU-SCHEDULING-ALGORITHM-VISUALISER
+- https://github.com/brilacasck/CPU-Scheduler
