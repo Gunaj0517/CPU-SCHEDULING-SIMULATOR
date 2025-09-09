@@ -1,46 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Process.h"
+#include "ProcessGrantInfo.h"
+
 using namespace std;
-struct Process {
-    string pid;                 // Process ID
-    int arrival_time;           // Arrival time
-    int cpu_burst_time1;        // First CPU burst
-    int io_time;                // I/O time
-    int cpu_burst_time2;        // Second CPU burst
 
-    Process(string id, int at, int cpu1, int io, int cpu2)
-        : pid(id), arrival_time(at),
-          cpu_burst_time1(cpu1), io_time(io), cpu_burst_time2(cpu2) {}
-};
 
-struct ProcessGrantInfo {
-    Process process;
-    int first_cpu_start;
-    int first_cpu_end;
-    int io_start;
-    int io_end;
-    int second_cpu_start;
-    int second_cpu_end;
-
-    ProcessGrantInfo(Process p, int fcs, int fce, int ios, int ioe, int scs, int sce)
-        : process(p),
-          first_cpu_start(fcs), first_cpu_end(fce),
-          io_start(ios), io_end(ioe),
-          second_cpu_start(scs), second_cpu_end(sce) {}
-
-    int get_end_time() const {
-        return second_cpu_end;
-    }
-
-    void print() const {
-        cout << "Process " << process.pid
-             << " | First CPU: " << first_cpu_start << "-" << first_cpu_end
-             << " | IO: " << io_start << "-" << io_end
-             << " | Second CPU: " << second_cpu_start << "-" << second_cpu_end
-             << endl;
-    }
-};
 
 class FCFS {
 private:
@@ -92,21 +58,12 @@ public:
 
     void print_chart() {
         for (auto &g : grantt_chart) {
-            g.print();
+            std::cout << "Process: " << g.process.pid
+                       << " CPU1: " << g.cpu_start_time1 << "-" << g.cpu_end_time1
+                       << " IO: " << g.io_start_time << "-" << g.io_end_time
+                       << " CPU2: " << g.cpu_start_time2 << "-" << g.cpu_end_time2 << std::endl;
         }
     }
 };
 
-int main() {
-    vector<Process> processes = {
-        Process("P1", 0, 4, 3, 5),
-        Process("P2", 2, 3, 2, 4),
-        Process("P3", 5, 2, 4, 3)
-    };
-
-    FCFS scheduler(processes);
-    scheduler.cpu_process();
-    scheduler.print_chart();
-
-    return 0;
-}
+// Main function removed to avoid conflicts with cpu_scheduler_simulator.cpp

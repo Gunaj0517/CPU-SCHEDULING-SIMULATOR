@@ -530,28 +530,4 @@ void print_chart(const vector<ProcessGrantInfo> &chart) {
     }
 }
 
-int main() {
-    // Example set of processes (pid, arrival, cpu1, io, cpu2)
-    vector<Process> processes = {
-        Process(1, 0, 4, 3, 5),
-        Process(2, 2, 3, 2, 4),
-        Process(3, 5, 2, 4, 3)
-    };
-
-    cout << "=== SJF (non-preemptive) ===\n";
-    SJF sjf_proc(processes);
-    auto sjf_chart = sjf_proc.cpu_process();
-    print_chart(sjf_chart);
-
-    cout << "\n=== Round Robin (quantum 3) ===\n";
-    RoundRobin rr_proc(processes);
-    auto rr_chart = rr_proc.cpu_process(3);
-    print_chart(rr_chart);
-
-    cout << "\n=== MLFQ (8,16) ===\n";
-    MLFQ mlfq_proc(processes);
-    auto mlfq_chart = mlfq_proc.cpu_process();
-    print_chart(mlfq_chart);
-
-    return 0;
-}
+// Main function removed to avoid conflicts with cpu_scheduler_simulator.cpp
